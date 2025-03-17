@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\PageController;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,6 +14,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+//PageController 
+Route::get('/',[PageController::class, 'index'])->name('index');
+Route::get('/contact',[PageController::class, 'contact'])->name('contact');
+Route::get('/blog/detail',[PageController::class, 'blogDetail'])->name('blog.detail');
+Route::get('/404/error',[PageController::class, 'error'])->name('error');
