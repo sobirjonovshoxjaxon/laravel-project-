@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PageController;
+use App\Http\Controllers\AdminController;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,3 +20,9 @@ Route::get('/',[PageController::class, 'index'])->name('index');
 Route::get('/contact',[PageController::class, 'contact'])->name('contact');
 Route::get('/blog/detail',[PageController::class, 'blogDetail'])->name('blog.detail');
 Route::get('/404/error',[PageController::class, 'error'])->name('error');
+
+//AdminController 
+Route::get('/admin/index',[AdminController::class, 'AdminIndex'])->name('admin.index');
+Route::get('/admin/posts/index',[AdminController::class, 'PostTable'])->name('post.table');
+Route::get('/admin/posts/create',[AdminController::class, 'PostCreate'])->name('post.create');
+Route::get('/admin/login',[AdminController::class, 'AdminLogin'])->name('login');

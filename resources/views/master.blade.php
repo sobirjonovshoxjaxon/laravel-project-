@@ -128,7 +128,7 @@
 							</div>
 							<div class="col-lg-2 col-12">
 								<div class="get-quote">
-									<a href="appointment.html" class="btn">Book Appointment</a>
+									<a href="{{ route('login')}}" class="btn">Login</a>
 								</div>
 							</div>
 						</div>
