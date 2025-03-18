@@ -25,17 +25,18 @@
             <div class="col-md-4 col-md-offset-4">
                 <div class="login-panel panel panel-default">                  
                     <div class="panel-body">
-                        <form role="form">
+                        <form role="form" action="{{ route('login.check')}}" method="POST">
+                           @csrf
                             <fieldset>
                                 <div class="form-group">
-                                    <input class="form-control" placeholder="Login" name="email" type="email" autofocus>
+                                    <input class="form-control" placeholder="Name" name="name" type="text" autofocus>
                                 </div>
                                 <div class="form-group">
-                                    <input class="form-control" placeholder="Password" name="password" type="password" value="">
+                                    <input class="form-control" placeholder="Password" name="password" type="password">
                                 </div>
                                 
                                 <!-- Change this to a button or input when using this as a form -->
-                                <a href="index.html" class="btn btn-lg btn-success btn-block">Login</a>
+                                <button type="submit" class="btn btn-success">Login</button>
                             </fieldset>
                         </form>
                     </div>

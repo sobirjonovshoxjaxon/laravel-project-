@@ -26,7 +26,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="index.html">
+                <a class="navbar-brand" href="">
                     <img src="{{ asset ('admin/img/logo.png')}}" alt="" />
                 </a>
             </div>
@@ -36,7 +36,7 @@
                 <!-- main dropdown -->
 
                 <li class="dropdown">
-                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                    <a href="{{ route('logout')}}">
                         <i class="fa fa-sign-out fa-fw" style="font-size: 30px;"></i></a>
                     </a>
                 </li>
