@@ -28,3 +28,5 @@ Route::get('/admin/posts/create',[AdminController::class, 'PostCreate'])->name('
 Route::get('/admin/login',[AdminController::class, 'AdminLogin'])->name('login');
 Route::post('/admin/login/check',[AdminController::class, 'LoginCheck'])->name('login.check');
 Route::get('/logout',[AdminController::class, 'logout'])->name('logout');
+
+Route::post('/admin/post/save',[AdminController::class, 'postSave'])->name('post.save');

@@ -18,18 +18,21 @@
                         <div class="panel-body">
                             <div class="row">
                                 <div class="col-lg-12 col-md-12 col-sm-12">
-                                    <form role="form">
+
+                                    <form action="{{ route('post.save')}}" role="form" method="POST" enctype="multipart/form-data">
+                                        @csrf 
+
                                         <div class="form-group">
                                             <label>Title</label>
-                                            <input class="form-control">
+                                            <input class="form-control" name="title">
                                         </div>
                                         <div class="form-group">
                                             <label>Image</label>
-                                            <input class="form-control" type="file">
+                                            <input class="form-control" type="file" name="image">
                                         </div>
                                         <div class="form-group">
                                             <label>Description</label>
-                                            <textarea class="form-control" ></textarea>
+                                            <textarea class="form-control" name="description"></textarea>
                                         </div>
                                        
                                         <button type="submit" class="btn btn-success">Create</button>

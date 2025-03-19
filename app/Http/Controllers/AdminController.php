@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\User;
 use Illuminate\Support\Facades\Auth;
+use App\Models\Post;
 
 class AdminController extends Controller
 {
@@ -51,5 +52,35 @@ class AdminController extends Controller
 
         Auth::logout();
         return redirect()->route('login');
+    }
+
+
+    public function postSave(Request $request){
+
+        $request->validate([
+
+            'title'=>'required',
+            'image'=>'required',
+            'description'=>'required'
+        ]);
+
+        // dd($request->all()); 
+
+        $post = new Post;
+
+        $file = $request->file('image');
+        $fileName = rand()."_".$file->getClientOriginalName();
+        $file->move(public_path('assets/img/'),$fileName);
+
+        $post->title = $request['title'];
+        $post->description = $request['description'];
+        $post->image = $fileName;
+
+        if($request->user()->posts()->save($post)){
+            $message = "Ma'lumot qo'shildi";
+        }
+
+        return redirect()->route('post.table');
+
     }
 }
