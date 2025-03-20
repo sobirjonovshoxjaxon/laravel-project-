@@ -14,7 +14,9 @@ class AdminController extends Controller
     }
 
     public function PostTable(){
-        return view('admin.posts.index');
+
+        $posts = Post::all();
+        return view('admin.posts.index',compact('posts'));
     }
 
     public function PostCreate(){
@@ -82,5 +84,20 @@ class AdminController extends Controller
 
         return redirect()->route('post.table');
 
+    }
+
+
+    public function postDelete($id){
+
+        $customer = Post::where('id',$id)->first();
+        $customer->delete();
+
+        if($customer->image != ""){
+
+            $image = public_path('assets/img/'.$customer->image);
+            unlink($image);
+        }
+
+        return redirect()->back();
     }
 }

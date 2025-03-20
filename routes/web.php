@@ -30,3 +30,6 @@ Route::post('/admin/login/check',[AdminController::class, 'LoginCheck'])->name('
 Route::get('/logout',[AdminController::class, 'logout'])->name('logout');
 
 Route::post('/admin/post/save',[AdminController::class, 'postSave'])->name('post.save');
+
+//Delete Post 
+Route::get('/admin/post/delete/{id}',[AdminController::class, 'postDelete'])->name('post.delete');
