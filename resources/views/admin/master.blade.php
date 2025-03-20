@@ -92,6 +92,16 @@
                         </ul>
                         <!-- second-level-items -->
                     </li>
+
+
+                    <li>
+                        <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i>Services<span class="fa arrow"></span></a>
+                        <ul class="nav nav-second-level">
+                            <li>
+                                <a href="{{ route('service.index')}}">Services Table</a>
+                            </li>
+                        </ul>
+                    </li>
                      
                     
                    

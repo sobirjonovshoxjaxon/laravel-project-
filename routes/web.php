@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PageController;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\ServiceController;
 
 /*
 |--------------------------------------------------------------------------
@@ -33,3 +34,8 @@ Route::post('/admin/post/save',[AdminController::class, 'postSave'])->name('post
 
 //Delete Post 
 Route::get('/admin/post/delete/{id}',[AdminController::class, 'postDelete'])->name('post.delete');
+
+//ServiceController 
+Route::get('admin/service/index',[ServiceController::class, 'serviceIndex'])->name('service.index');
+Route::get('admin/service/create',[ServiceController::class, 'serviceCreate'])->name('service.create');
+Route::post('admin/service/create',[ServiceController::class, 'serviceCreateSave'])->name('service.create.save');
