@@ -45,4 +45,19 @@ class ServiceController extends Controller
 
         return redirect()->route('service.index');
     }
+
+    public function serviceDelete($id){
+
+        $service = Service::where('id',$id)->first();
+
+        if($service->image != ""){
+
+            $image = public_path('assets/img/'.$service->image);
+            unlink($image);
+        }
+
+        $service->delete();
+        return redirect()->back();
+    }
+
 }

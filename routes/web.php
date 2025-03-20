@@ -39,3 +39,4 @@ Route::get('/admin/post/delete/{id}',[AdminController::class, 'postDelete'])->na
 Route::get('admin/service/index',[ServiceController::class, 'serviceIndex'])->name('service.index');
 Route::get('admin/service/create',[ServiceController::class, 'serviceCreate'])->name('service.create');
 Route::post('admin/service/create',[ServiceController::class, 'serviceCreateSave'])->name('service.create.save');
+Route::get('admin/service/delete/{id}',[ServiceController::class, 'serviceDelete'])->name('service.delete');

@@ -39,7 +39,7 @@
                                                 <a href="" class="btn btn-warning">Edit</a>
                                             </td>
                                             <td>
-                                                <a href="" class="btn btn-danger">Delete</a>
+                                                <a href="{{ route('service.delete',['id' => $service->id] )}}" class="btn btn-danger">Delete</a>
                                             </td>
                                         </tr>
                                     @endforeach 
