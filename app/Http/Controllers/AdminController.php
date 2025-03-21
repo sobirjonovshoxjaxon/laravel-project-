@@ -100,4 +100,43 @@ class AdminController extends Controller
 
         return redirect()->back();
     }
+
+    public function postEdit($id){
+
+        $post = Post::findOrFail($id);
+        return view('admin.posts.edit',compact('post'));
+    }
+
+    public function PostUpdate(Request $request){
+
+        $request->validate([
+
+            'title'=>'required',
+            'image'=>'required',
+            'description'=>'required'
+        ]);
+
+        
+        //dd($request->all());
+
+        $post = Post::find($request['postId']);
+
+        if($post->image != ""){
+
+            $image = public_path('assets/img/'.$post->image);
+            unlink($image);
+        }
+
+        $file = $request->file('image');
+        $fileName = rand()."_".$file->getClientOriginalName();
+        $file->move(public_path('assets/img/'),$fileName);
+
+        $post->title = $request['title'];
+        $post->description = $request['description'];
+        $post->image = $fileName;
+
+        $post->update();
+
+        return redirect()->route('post.table');
+    }
 }

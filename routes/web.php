@@ -26,6 +26,9 @@ Route::get('/404/error',[PageController::class, 'error'])->name('error');
 Route::get('/admin/index',[AdminController::class, 'AdminIndex'])->name('admin.index');
 Route::get('/admin/posts/index',[AdminController::class, 'PostTable'])->name('post.table');
 Route::get('/admin/posts/create',[AdminController::class, 'PostCreate'])->name('post.create');
+Route::get('/admin/posts/edit/{id}',[AdminController::class, 'PostEdit'])->name('post.edit');
+Route::post('/admin/posts/edit/update',[AdminController::class, 'PostUpdate'])->name('post.update');
+
 Route::get('/admin/login',[AdminController::class, 'AdminLogin'])->name('login');
 Route::post('/admin/login/check',[AdminController::class, 'LoginCheck'])->name('login.check');
 Route::get('/logout',[AdminController::class, 'logout'])->name('logout');
@@ -40,3 +43,4 @@ Route::get('admin/service/index',[ServiceController::class, 'serviceIndex'])->na
 Route::get('admin/service/create',[ServiceController::class, 'serviceCreate'])->name('service.create');
 Route::post('admin/service/create',[ServiceController::class, 'serviceCreateSave'])->name('service.create.save');
 Route::get('admin/service/delete/{id}',[ServiceController::class, 'serviceDelete'])->name('service.delete');
+
