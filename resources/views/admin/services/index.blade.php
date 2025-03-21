@@ -36,7 +36,7 @@
                                                 <a href="" class="btn btn-primary">Show</a>
                                             </td>
                                             <td>
-                                                <a href="" class="btn btn-warning">Edit</a>
+                                                <a href="{{ route('service.edit',['id' => $service->id ])}}" class="btn btn-warning">Edit</a>
                                             </td>
                                             <td>
                                                 <a href="{{ route('service.delete',['id' => $service->id] )}}" class="btn btn-danger">Delete</a>
