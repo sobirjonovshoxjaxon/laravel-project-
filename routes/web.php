@@ -46,3 +46,11 @@ Route::get('admin/service/delete/{id}',[ServiceController::class, 'serviceDelete
 Route::get('admin/service/edit/{id}',[ServiceController::class, 'serviceEdit'])->name('service.edit');
 Route::post('admin/service/edit/save',[ServiceController::class, 'serviceUpdate'])->name('service.update');
 
+
+//Language 
+Route::get('/lang/{lang}',function($lang){
+
+    session(['lang'=>$lang]);
+    return back();
+});
+

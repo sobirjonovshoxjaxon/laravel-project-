@@ -109,18 +109,20 @@
 								<div class="main-menu">
 									<nav class="navigation">
 										<ul class="nav menu">
-											<li class="active"><a href="#">Home <i class="icofont-rounded-down"></i></a>
-												<ul class="dropdown">
-													<li><a href="index.html">Home Page 1</a></li>
-												</ul>
-											</li>
-											<li><a href="#">Doctos </a></li>
+											<li class="active"><a href="#">Home</a></li>
 											<li><a href="#">Services </a></li>
 											
 											<li>
                                                 <a href="#">Blog Detail</a>
 											</li>
-											<li><a href="contact.html">Contact Us</a></li>
+											<li><a href="contact.html">Contact Us {{ session('lang') }}</a></li>
+
+											
+												<li><a href="/lang/uz">UZ</a></li>
+												<li><a href="/lang/ru">RU</a></li>
+												<li><a href="/lang/en">EN</a></li>
+											
+											
 										</ul>
 									</nav>
 								</div>
