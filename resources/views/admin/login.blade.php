@@ -34,6 +34,20 @@
                                 <div class="form-group">
                                     <input class="form-control" placeholder="Password" name="password" type="password">
                                 </div>
+
+                                <div class="form-group">
+
+                                    <strong>ReCaptcha:</strong>
+
+                                    <div class="g-recaptcha" data-sitekey="{{ env('GOOGLE_RECAPTCHA_KEY') }}"></div>
+
+                                    @if ($errors->has('g-recaptcha-response'))
+
+                                        <span class="text-danger">{{ $errors->first('g-recaptcha-response') }}</span>
+
+                                    @endif
+
+                                </div>  
                                 
                                 <!-- Change this to a button or input when using this as a form -->
                                 <button type="submit" class="btn btn-success">Login</button>
@@ -46,6 +60,8 @@
     </div>
 
      <!-- Core Scripts - Include with every page -->
+    <!-- <script src="https://www.google.com/recaptcha/api.js"></script> -->
+    <script src='https://www.google.com/recaptcha/api.js'></script>
     <script src="{{ asset ('admin/plugins/jquery-1.10.2.js')}}"></script>
     <script src="{{ asset ('admin/plugins/bootstrap/bootstrap.min.js')}}"></script>
     <script src="{{ asset ('admin/plugins/metisMenu/jquery.metisMenu.js')}}"></script>

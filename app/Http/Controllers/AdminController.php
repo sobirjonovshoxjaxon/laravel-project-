@@ -6,6 +6,9 @@ use Illuminate\Http\Request;
 use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 use App\Models\Post;
+use App\Rules\ReCaptcha; 
+
+use App\Rules\GoogleRecaptcha;
 
 class AdminController extends Controller
 {
@@ -33,7 +36,8 @@ class AdminController extends Controller
 
             'name'=>'required',
             'password'=>'required',
-        ]);
+            'g-recaptcha-response' => ['required', new ReCaptcha],
+        ]); 
 
         $user = User::where([
 
