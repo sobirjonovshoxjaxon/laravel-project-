@@ -16,16 +16,34 @@
                                                 @csrf 
 
                                                         <div class="form-group">
-                                                            <label>Name</label>
-                                                            <input class="form-control" type="text" name="name">  
+                                                            <label>Name Uz</label>
+                                                            <input class="form-control" type="text" name="name_uz">  
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label>Name Ru</label>
+                                                            <input class="form-control" type="text" name="name_ru">  
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label>Name En</label>
+                                                            <input class="form-control" type="text" name="name_en">  
                                                         </div>
                                                         <div class="form-group">
                                                             <label>Image</label>
                                                             <input class="form-control" type="file" name="image">
                                                         </div>
                                                         <div class="form-group">
-                                                            <label>Description</label>
-                                                            <textarea class="form-control" rows="3" name="description"></textarea>
+                                                            <label>Description Uz</label>
+                                                            <textarea class="form-control" rows="3" name="description_uz"></textarea>
+                                                        </div>
+
+                                                        <div class="form-group">
+                                                            <label>Description Ru</label>
+                                                            <textarea class="form-control" rows="3" name="description_ru"></textarea>
+                                                        </div>
+
+                                                        <div class="form-group">
+                                                            <label>Description En</label>
+                                                            <textarea class="form-control" rows="3" name="description_en"></textarea>
                                                         </div>
                                                 
                                                 

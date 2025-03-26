@@ -17,9 +17,13 @@
                                     <thead>
                                         <tr>
                                             <th>T/R</th>
-                                            <th>Title</th>
+                                            <th>Title Uz</th>
+                                            <th>Title Ru</th>
+                                            <th>Title En</th>
                                             <th>Image</th>
-                                            <th>Description</th>
+                                            <th>Description Uz</th>
+                                            <th>Description Ru</th>
+                                            <th>Description En</th>
                                             <th colspan="3">Action</th>
                                         </tr>
                                     </thead>
@@ -28,11 +32,15 @@
                                     @foreach($posts as $post)
                                         <tr>
                                             <td>{{ $post->id }}</td>
-                                            <td>{{ $post->title }}</td>
+                                            <td>{{ $post->title_uz }}</td>
+                                            <td>{{ $post->title_ru }}</td>
+                                            <td>{{ $post->title_en }}</td>
                                             <td>
                                                 <img width="100px" src="{{ asset ('assets/img/'.$post->image )}}" alt="">
                                             </td>
-                                            <td>{{ $post->description }}</td>
+                                            <td>{{ $post->description_uz }}</td>
+                                            <td>{{ $post->description_ru }}</td>
+                                            <td>{{ $post->description_en }}</td>
                                             <td>
                                                 <a href="" class="btn btn-primary">Show</a>
                                             </td>

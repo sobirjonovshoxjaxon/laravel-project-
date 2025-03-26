@@ -386,8 +386,8 @@
 						<!-- Start Single Service -->
 						<div class="single-service">
 							<img width="300px" src="{{ asset('assets/img/'.$service->image )}}" alt="">
-							<h4><a href="service-details.html">{{ $service->name }}</a></h4>
-							<p>{{ $service->description }}</p>	
+							<h4><a href="service-details.html">{{ $service['name_'.App::getLocale()] }}</a></h4>
+							<p>{{ $service['description_'.App::getLocale()] }}</p>	
 						</div>
 						<!-- End Single Service -->
 					</div>
@@ -526,8 +526,8 @@
 								<div class="news-body">
 									<div class="news-content">
 										<div class="date">{{ $post->created_at->format('Y.m.d') }}</div>
-										<h2><a href="blog-single.html">{{ $post->title }}</a></h2>
-										<p class="text">{{ $post->description }}</p>
+										<h2><a href="blog-single.html">{{ $post['title_'.App::getLocale()] }}</a></h2>
+										<p class="text">{{ $post['description_'.App::getLocale()] }}</p>
 									</div>
 								</div>
 							</div>

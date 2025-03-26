@@ -23,16 +23,39 @@
                                         @csrf 
 
                                         <div class="form-group">
-                                            <label>Title</label>
-                                            <input class="form-control" name="title">
+                                            <label>Title Uz</label>
+                                            <input class="form-control" name="title_uz">
                                         </div>
+
+                                        <div class="form-group">
+                                            <label>Title Ru</label>
+                                            <input class="form-control" name="title_ru">
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label>Title En</label>
+                                            <input class="form-control" name="title_en">
+                                        </div>
+
                                         <div class="form-group">
                                             <label>Image</label>
                                             <input class="form-control" type="file" name="image">
                                         </div>
+
+
                                         <div class="form-group">
-                                            <label>Description</label>
-                                            <textarea class="form-control" name="description"></textarea>
+                                            <label>Description Uz</label>
+                                            <textarea class="form-control" name="description_uz"></textarea>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label>Description Ru</label>
+                                            <textarea class="form-control" name="description_ru"></textarea>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label>Description En</label>
+                                            <textarea class="form-control" name="description_en"></textarea>
                                         </div>
                                        
                                         <button type="submit" class="btn btn-success">Create</button>

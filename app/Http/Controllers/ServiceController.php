@@ -21,9 +21,13 @@ class ServiceController extends Controller
         
         $request->validate([
 
-            'name'=>'required',
+            'name_uz'=>'required',
+            'name_ru'=>'required',
+            'name_en'=>'required',
             'image'=>'required',
-            'description'=>'required'
+            'description_uz'=>'required',
+            'description_ru'=>'required',
+            'description_en'=>'required'
         ]);
 
         //dd($request->all());
@@ -34,8 +38,12 @@ class ServiceController extends Controller
         $fileName = rand()."_".$file->getClientOriginalName();
         $file->move(public_path('assets/img/'),$fileName); 
 
-        $service->name = $request['name'];
-        $service->description = $request['description'];
+        $service->name_uz = $request['name_uz'];
+        $service->name_ru = $request['name_ru'];
+        $service->name_en = $request['name_en'];
+        $service->description_uz = $request['description_uz'];
+        $service->description_ru = $request['description_ru'];
+        $service->description_en = $request['description_en'];
         $service->image =  $fileName;
 
         if($request->user()->services()->save($service)){
@@ -70,9 +78,13 @@ class ServiceController extends Controller
 
         $request->validate([
 
-            'name'=>'required',
+            'name_uz'=>'required',
+            'name_ru'=>'required',
+            'name_en'=>'required',
             'image'=>'required',
-            'description'=>'required'
+            'description_uz'=>'required',
+            'description_ru'=>'required',
+            'description_en'=>'required',
         ]);
 
         //dd($request->all());
@@ -89,9 +101,13 @@ class ServiceController extends Controller
         $fileName = rand()."_".$file->getClientOriginalName();
         $file->move(public_path('assets/img/'),$fileName);
 
-        $service->name = $request['name'];
+        $service->name_uz = $request['name_uz'];
+        $service->name_ru = $request['name_ru'];
+        $service->name_en = $request['name_en'];
         $service->image = $fileName;
-        $service->description = $request['description'];
+        $service->description_uz = $request['description_uz'];
+        $service->description_ru = $request['description_ru'];
+        $service->description_en = $request['description_en'];
 
         $service->update();
 

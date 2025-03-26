@@ -23,17 +23,39 @@
                                         @csrf 
 
                                         <div class="form-group">
-                                            <label>Title</label>
-                                            <input class="form-control" name="title" value="{{ $post->title }}">
+                                            <label>Title Uz</label>
+                                            <input class="form-control" name="title_uz" value="{{ $post->title_uz }}">
                                         </div>
+
+                                        <div class="form-group">
+                                            <label>Title Ru</label>
+                                            <input class="form-control" name="title_ru" value="{{ $post->title_ru }}">
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label>Title En</label>
+                                            <input class="form-control" name="title_en" value="{{ $post->title_en }}">
+                                        </div>
+
                                         <div class="form-group">
                                             <label>Image</label>
                                             <input class="form-control" type="file" name="image">
                                             <img style="width: 100px" src="{{ asset('assets/img/'.$post->image)}}" alt="">
                                         </div>
+
                                         <div class="form-group">
-                                            <label>Description</label>
-                                            <textarea class="form-control" name="description">{{ $post->description }}</textarea>
+                                            <label>Description Uz</label>
+                                            <textarea class="form-control" name="description_uz">{{ $post->description_uz }}</textarea>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label>Description Ru</label>
+                                            <textarea class="form-control" name="description_ru">{{ $post->description_ru }}</textarea>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label>Description En</label>
+                                            <textarea class="form-control" name="description_en">{{ $post->description_en }}</textarea>
                                         </div>
 
                                         <input type="hidden" value="{{ $post->id }}" name="postId">

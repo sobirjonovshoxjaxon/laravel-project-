@@ -61,9 +61,13 @@ class AdminController extends Controller
 
         $request->validate([
 
-            'title'=>'required',
+            'title_uz'=>'required',
+            'title_ru'=>'required',
+            'title_en'=>'required',
             'image'=>'required',
-            'description'=>'required'
+            'description_uz'=>'required',
+            'description_ru'=>'required',
+            'description_en'=>'required'
         ]);
 
         // dd($request->all()); 
@@ -74,8 +78,12 @@ class AdminController extends Controller
         $fileName = rand()."_".$file->getClientOriginalName();
         $file->move(public_path('assets/img/'),$fileName);
 
-        $post->title = $request['title'];
-        $post->description = $request['description'];
+        $post->title_uz = $request['title_uz'];
+        $post->title_ru = $request['title_ru'];
+        $post->title_en = $request['title_en'];
+        $post->description_uz = $request['description_uz'];
+        $post->description_ru = $request['description_ru'];
+        $post->description_en = $request['description_en'];
         $post->image = $fileName;
 
         if($request->user()->posts()->save($post)){
@@ -111,9 +119,13 @@ class AdminController extends Controller
 
         $request->validate([
 
-            'title'=>'required',
+            'title_uz'=>'required',
+            'title_ru'=>'required',
+            'title_en'=>'required',
             'image'=>'required',
-            'description'=>'required'
+            'description_uz'=>'required',
+            'description_ru'=>'required',
+            'description_en'=>'required'
         ]);
 
         
@@ -131,8 +143,12 @@ class AdminController extends Controller
         $fileName = rand()."_".$file->getClientOriginalName();
         $file->move(public_path('assets/img/'),$fileName);
 
-        $post->title = $request['title'];
-        $post->description = $request['description'];
+        $post->title_uz = $request['title_uz'];
+        $post->title_ru = $request['title_ru'];
+        $post->title_en = $request['title_en'];
+        $post->description_uz = $request['description_uz'];
+        $post->description_ru = $request['description_ru'];
+        $post->description_en = $request['description_en'];
         $post->image = $fileName;
 
         $post->update();
