@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PageController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\ServiceController;
+use App\Models\Post;
 
 /*
 |--------------------------------------------------------------------------
@@ -52,5 +53,31 @@ Route::get('/lang/{lang}',function($lang){
 
     session(['lang'=>$lang]);
     return back();
+});
+
+//Search 
+Route::get('/search', function(){
+
+    $val = Request()->get('q'); 
+
+    if($val != ""){
+
+        $posts = Post::where('description_uz','LIKE','%'.$val.'%')->get();
+
+        if(count($posts)>0){
+
+            return view('search',['posts'=>$posts]);
+
+        }else{
+
+            return view('error404');
+
+        }
+
+
+    }else{
+
+       return redirect()->back();
+    }
 });
 

@@ -109,13 +109,13 @@
 								<div class="main-menu">
 									<nav class="navigation">
 										<ul class="nav menu">
-											<li class="active"><a href="#">Home</a></li>
+											<li class="active"><a href="{{ route('index')}}">Home</a></li>
 											<li><a href="#">Services </a></li>
 											
 											<li>
                                                 <a href="#">Blog Detail</a>
 											</li>
-											<li><a href="contact.html">Contact Us {{ session('lang') }}</a></li>
+											<li><a href="{{ route('contact')}}">Contact Us {{ session('lang') }}</a></li>
 
 											
 												<li><a href="/lang/uz">UZ</a></li>
