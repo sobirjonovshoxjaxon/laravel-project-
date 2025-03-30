@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PageController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\ServiceController;
+use App\Http\Controllers\MailController;
 use App\Models\Post;
 
 /*
@@ -81,3 +82,6 @@ Route::get('/search', function(){
     }
 });
 
+
+//Mail 
+Route::post('/send/mail',[MailController::class, 'sendMail'])->name('send.mail');
